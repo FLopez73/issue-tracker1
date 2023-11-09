@@ -1,0 +1,22 @@
+<% if notice.present? %>
+    <div class="fixed top-0 left-1/2 h-12 py-2 px-3 bg-green-50 mb-5 p-4 text-green-500 font-medium rounded-lg block" id="notice">
+    <%= notice %>
+    </div>
+<% end %>
+
+<div class="flex flex-col">
+    <h1 class="font-bold text-2xl">Issue Tracker</h1>
+
+  <div class="mt-4 py-4 px-3">
+    <%= render "form", issue: @issue %>
+  </div>
+</div>
+
+
+<div id="issues">
+<h1 class="font bold text-lg mb-7"> Issues</h1>
+
+ <div class="px-5">
+   <%= render @issues %>
+ </div>
+</div>
