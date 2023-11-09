@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
  
   post "issues/:id/toggle", to: "issues#toggle"
-
+  delete "issues/:id" => "issues#destroy"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
