@@ -42,8 +42,27 @@
           </td>
           <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
             <%= form_with(model: issue, local: true) do |form| %>
-              <%= form.submit "Complete", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" %>
-            <% end %>
+              <%= form.check_box :completed,
+                              data: {
+                                id: issue.id,
+                                action: "issues#toggle"
+                              },
+              
+                              class: "mr-2 align-middle bg-gray-50 border-gray-300 focus:ring-3 focus:ring-blue-300 h-5 w-5 rounded checked:bg-green-500" %>
+                                
+         <%= link_to "Edit", edit_issue_path(issue),
+              class: "btn bg-gray-100" %>
+        
+
+                <div class="inline-block ml-2">
+                <%= button_to "Delete", issue_path(issue),
+                           method: :delete,
+                          data: { action: "click->issue#delete" },
+                           class: "btn bg-red-100" %>
+    </div>
+
+             
+        <% end %>
           </td>
         </tr>
       <% end %>
@@ -52,4 +71,6 @@
 <% else %>
   <p>No issues to display</p>
 <% end %>
+
+
 

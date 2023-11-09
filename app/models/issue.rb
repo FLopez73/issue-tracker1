@@ -1,6 +1,6 @@
 class Issue < ApplicationRecord
   enum priority: { low: 'Low', medium: 'Medium', high: 'High' }
-  enum status: { open: 'Open', in_progress: 'In_progress', closed: 'Closed' }
+  enum status: { open: 'Open', in_progress: 'In Progress', closed: 'Closed' }
 
   
   validates :title, presence: true
