@@ -12,7 +12,7 @@ class IssuesController < ApplicationController
         if @issue.save 
             redirect_to issues_url, notice: "Issue was successfully created."
         else 
-            render :issue, status: :unprocessable_entity
+            render :new, status: :unprocessable_entity
         end
       end
     end
