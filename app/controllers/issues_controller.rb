@@ -23,7 +23,7 @@ class IssuesController < ApplicationController
         @issue = Issue.find(params[:id])
       end
     
-      def update
+    def update
         @issue = Issue.find(params[:id])
     
         respond_to do |format|
@@ -33,7 +33,7 @@ class IssuesController < ApplicationController
             format.html { render :edit, status: :unprocessable_entity }
           end
         end
-      end
+    end
     
     def destroy
         @issue = Issue.find(params[:id])
