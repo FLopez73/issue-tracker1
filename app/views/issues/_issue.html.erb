@@ -2,7 +2,7 @@
   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
     <%= issue.title %>
   </td>
-  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+  <td style="width: 8rem; max-width: 8rem;" class="truncate max-w-8 overflow-auto px-6 py-4 whitespace-nowrap text-sm text-gray-500">
     <%= issue.description %>
   </td>
   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -24,12 +24,12 @@
                            class: "text-blue-600 hover:bg-blue-100 rounded px-4 py-2" %>
       <% end %>
 </td>
-<td class="px-6 py-4 whitespace-nowrap text-right text-sm">
+<td class="w-24 px-6 py-4 whitespace-nowrap text-right text-sm">
   <%= link_to edit_issue_path(issue) do %>
     <%= image_tag("edit-icon.png", alt: "Edit", class: "hover:bg-blue-100 rounded p-2") %>
   <% end %>
 </td>
-<td class="px-6 py-4 whitespace-nowrap text-right text-sm">
+<td class="w-24 px-6 py-4 whitespace-nowrap text-right text-sm">
   <%= button_to issue_path(issue), method: :delete, data: { confirm: "Are you sure?" } do %>
     <%= image_tag("delete-icon.png", alt: "Delete", class: "hover:bg-red-100 rounded p-2") %>
   <% end %>
