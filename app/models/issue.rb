@@ -2,7 +2,8 @@ class Issue < ApplicationRecord
   enum priority: { low: 'Low', medium: 'Medium', high: 'High' }
   enum status: { open: 'Open', in_progress: 'In Progress', closed: 'Closed' }
 
-  
+  broadcasts_to -> (issue) { :issues }
+
   validates :title, presence: true
   validates :description, presence: true
   validates :priority, presence: true

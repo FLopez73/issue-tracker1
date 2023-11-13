@@ -6,18 +6,20 @@ class IssuesController < ApplicationController
     end
 
 
-    def create 
-        @issue = Issue.new(issue_params)
-        
-        respond_to do |format|
-        if @issue.save 
-           format.html { redirect_to issues_url, notice: "Issue was successfully created." }
-        else 
-            format.html { render :new, status: :unprocessable_entity }
+    def create
+      @issue = Issue.new(issue_params)
+  
+      respond_to do |format|
+        if @issue.save
+          format.html { redirect_to issues_url, notice: 'Issue was successfully created.' }
+        else
+          format.turbo_stream { render :new, status: :unprocessable_entity }
+          format.html { render :new, status: :unprocessable_entity }
         end
       end
     end
-
+    
+  
 
     def edit
         @issue = Issue.find(params[:id])
